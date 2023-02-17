@@ -2,12 +2,13 @@ package com.example.projectchat
 
 
 import java.time.LocalDateTime
+import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
 data class MyMessage(
     val usuario: String,
     val body: String,
-    val hora: Int = Integer.parseInt(LocalDateTime.now().format(DateTimeFormatter.ofPattern("mm")))
+    val hora: LocalTime = LocalTime.now()
 )
 
 val messages: List<MyMessage> = listOf(

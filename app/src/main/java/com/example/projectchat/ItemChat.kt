@@ -50,9 +50,9 @@ fun ItemChat(message: MyMessage, currentUser: String) {
                 Text(text = message.body)
                 Spacer(Modifier.height(8.dp))
                 if (clickado) {
-                    val horaActual: Int = Integer.parseInt(LocalDateTime.now().format(DateTimeFormatter.ofPattern("mm")))
-
-                    Text(text =  "Hace "+ (horaActual-message.hora) + " minutos")
+                    Text(text =  "Hace "+
+                            if (calcularTiempo(message.hora).contains(":")){
+                            calcularTiempo(message.hora)}else calcularTiempo(message.hora))
 
                 }
             }
